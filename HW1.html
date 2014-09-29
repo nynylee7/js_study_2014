@@ -6,20 +6,21 @@
 </head>
 <body>
 <script>
-    var a = 200;
-    var b = 3;
-    c = divide(a,b);
-    function divide(a,b) {
-        i=1 ;
-        mul = 3*i ;
-        while (mul < 100) {
-            i = i+1 ;
-            mul = 3* i }
-        return i-1;
-    }
-    alert(a+"/3 은 " + c + " 이다");
-    prompt("what's your name?") ;
+    var name = prompt("What's your name?")
+    var a= name.charCodeAt(0);
 
+    if(a >= 48 && a <=57 ) {
+        alert("You are number");
+    }
+    else if(a >= 65 && a <=122 ) {
+        alert("You are English");
+    }
+    else if(a >= 12593 && a <= 55203 ) {
+        alert("You are Korean");
+    }
+    else {
+        alert("wrong input")
+    }
 </script>
 </body>
 </html>
