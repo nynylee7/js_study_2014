@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //자동차움직이는 게임// console로만 동작
+    var car = {
+        position: 0,
+        gas: 0
+    };
+    car.addGas = function (value) {
+        this.gas += value;
+    }
+        car.move = function() {
+            if (this.gas>0) {
+                this.gas=this.gas-1
+                this.position +=10;
+            }
+        };
+        car.print = function() {
+            alert(this.position);
+        };
+        car.addGas(10);
+    for (var i=0; i<10; i++) {
+      car.move();
+    }
+    car.print();
+</script>
+
+</body>
+</html>

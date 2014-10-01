@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   <canvas id = "canvas" width="800" height ="600">
+
+   </canvas>
+
+<script>
+    var can = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    context.fillStyle ="#555555";
+    context.fillRect(0,0,400,300); //사각형 그리기
+
+    context.beginPath() ; // 그리기 시작
+    context.arc(120,120,30,0,2*Math.PI) ; // 원, 호 그리기 (x,y,radius, 시작각도, 종료각도)
+    context.fill(); // 원의 색깔
+    context.stroke(); // 그리기종료
+
+    var image = new Image();
+    image.src =  'http://images.recover39.com/poo_75x72.png'
+    image.onload = function() {
+        context.drawImage(image, 180,180);
+    };
+
+</script>
+</body>
+</html>
