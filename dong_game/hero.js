@@ -6,7 +6,7 @@ hero.image.src = 'http://images.recover39.com/zolaman_114x161.png';
 hero.image.onload = function () {
     context.drawImage(hero.image, hero.x, hero.y);
 };
-var i =0 , count = 0 ;
+var i = 0 ;
 
 function onKeyDown(event) {
 
