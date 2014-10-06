@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<canvas id = "canvas">
+</canvas>
+<script type="text/javascript"
+         src="http://images.recover39.com/autoResizeCanvas.js"></script>
+<script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var image_zola = new Image();
+    var x = 0, y = 550;
+    var xd =[], yd = []
+    image_zola.src = 'http://images.recover39.com/zolaman_114x161.png';
+    image_zola.onload = function () {
+            context.drawImage(image_zola, x, y);
+    }
+
+    var image_dong = new Image();
+    var x1 = 300, y1 = 0;
+    image_dong.src = 'http://images.recover39.com/poo_75x72.png';
+
+    function onKeyDown(event) {
+        switch (event.keyCode) {
+            case 37: // left key pressed
+                x -= 10;
+ //               context.clearRect(0,0,window.innerWidth, window.innerHeight);  // screen reset
+ //               context.drawImage(image_zola,x,y);
+                break;
+            case 39: // right key pressed
+                x +=10;
+//                context.clearRect(0,0,window.innerWidth, window.innerHeight);  // screen reset
+//                context.drawImage(image_zola, x, y);
+                break;
+        }
+    }
+
+    for(var i = 0; i <15 ; i++) {
+          xd[i] = Math.floor(50 + Math.random() * 700);
+          yd[i] = Math.floor(-500 + Math.random() * 600);
+    }
+
+    function loop() {
+      //  image_zola.onload = function () {
+            context.clearRect(0, 0, window.innerWidth, window.innerHeight);  // screen reset
+            context.drawImage(image_zola, x, y);
+
+        for (var i = 0; i < 10; i++) {
+                yd[i] += 5;
+                if(yd[i]>600) {
+                    yd[i]=0;
+                    xd[i] = Math.floor(50 + Math.random() * 700);
+                }
+                else {
+                    context.drawImage(image_dong, xd[i], yd[i]);
+                }
+        }
+            requestAnimationFrame(loop);
+      //  }
+    }
+    loop();
+  //  function loop() {
+   //     y += 5 ;
+   //     context.clearRect(0,0,window.innerWidth, window.innerHeight);  // screen reset
+   //     context.drawImage(image, x, y);
+    //    requestAnimationFrame(loop);
+    //}
+   // loop();
+</script>
+// key input
+<script type="text/javascript"
+        src="http://images.recover39.com/onKeyDown.js"></script>
+</body>
+
+</html>
