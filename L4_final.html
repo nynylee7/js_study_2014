@@ -9,9 +9,19 @@
 </canvas>
 <script type="text/javascript" src="http://images.recover39.com/autoResizeCanvas.js"></script>
 
-<script src="dong_game/hero_acceleration.js"></script>
+<script src="dong_game/hero_new.js"></script>
 <script src="dong_game/dong.js"></script>
-<script src="dong_game/main.js"></script>
-<script type="text/javascript" src="http://images.recover39.com/onKeyDown.js"></script>
+<script src="dong_game/score_board.js"></script>
+<script src="dong_game/main_new.js"></script>
+
+<!--Key 입력 받는 부분-->
+<script type="text/javascript">
+    ;(function() {
+        function _onKeyDown() {console.error("'onKeyDown(event)' function is not defined.");}
+        function _onKeyUp() {console.error("'onKeyUp(event)' function is not defined.");}
+        window.addEventListener('keydown', typeof onKeyDown === 'function' ? onKeyDown : _onKeyDown, false);
+        window.addEventListener('keyup', typeof onKeyUp === 'function' ? onKeyUp : _onKeyUp, false);
+    })();
+</script>
 </body>
 </html>
